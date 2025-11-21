@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const timeline = [
+  {
+    year: '2025',
+    title: 'Senior Instructional Designer',
+    company: 'commercetools',
+    description: 'Leading AI-powered learning initiatives, reducing content creation time by 70% while scaling to thousands of developers.'
+  },
+  {
+    year: '2024',
+    title: 'AI Learning Innovation',
+    company: 'commercetools',
+    description: 'Pioneered the integration of GPT-4 and Claude into learning workflows, creating automated content generation systems.'
+  },
+  {
+    year: '2022',
+    title: 'Graduate Certificate in Educational Design',
+    company: 'University',
+    description: 'Formal training in instructional design principles, learning theory, and assessment strategies.'
+  },
+  {
+    year: '2020-2022',
+    title: 'High School Computer Science Teacher',
+    company: 'Education',
+    description: 'Taught programming, web development, and computational thinking to 150+ students annually.'
+  }
+];
+---
+
+<Layout title="About - Luke Panaccio">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
+      <div class="max-w-4xl mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Me</h1>
+        <p class="text-xl text-gray-600">
+          From teaching high school computer science to pioneering AI-powered learning at scale
+        </p>
+      </div>
+    </section>
+    
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="prose prose-lg max-w-none">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">My Journey</h2>
+          
+          <p class="text-gray-600 mb-6">
+            I started my career in education as a high school computer science teacher, where I discovered my passion for making complex technical concepts accessible and engaging. Teaching 150+ students annually taught me that effective learning isn't just about delivering information—it's about creating experiences that stick.
+          </p>
+          
+          <p class="text-gray-600 mb-6">
+            In 2022, I formalized my instructional design skills with a graduate certificate in Educational Design, diving deep into learning theory, assessment strategies, and evidence-based instructional methods. This academic foundation, combined with my classroom experience, prepared me for the next chapter of my career.
+          </p>
+          
+          <p class="text-gray-600 mb-8">
+            At commercetools, I found the perfect intersection of my technical background and instructional expertise. Here, I've had the opportunity to completely reimagine how we create and deliver technical learning content. By embracing AI tools like GPT-4 and Claude, I've built systems that have reduced content creation time by 70% while actually improving quality and consistency.
+          </p>
+          
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">What I Do</h2>
+          
+          <p class="text-gray-600 mb-6">
+            I specialize in creating scalable learning systems that blend traditional instructional design principles with cutting-edge AI technology. My work ranges from building conversational AI mentors that guide learners through complex topics to designing comprehensive curriculum architectures that serve thousands of developers worldwide.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 my-8">
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">AI-Powered Learning</h3>
+              <p class="text-sm text-gray-600">
+                I design and implement AI systems that automate content creation, provide personalized feedback, and create adaptive learning experiences.
+              </p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">Curriculum Architecture</h3>
+              <p class="text-sm text-gray-600">
+                I build modular, scalable learning ecosystems that support multiple learning paths while maintaining consistency and quality.
+              </p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">Technical Documentation</h3>
+              <p class="text-sm text-gray-600">
+                I transform complex technical concepts into clear, engaging learning materials that developers actually want to read.
+              </p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="font-semibold text-gray-900 mb-2">Learning Analytics</h3>
+              <p class="text-sm text-gray-600">
+                I implement data-driven approaches to measure learning effectiveness and continuously improve our educational offerings.
+              </p>
+            </div>
+          </div>
+          
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">My Philosophy</h2>
+          
+          <p class="text-gray-600 mb-6">
+            I believe that the best learning experiences emerge when we combine human expertise with AI capabilities. Technology should amplify our ability to create meaningful, personalized learning journeys—not replace the human touch that makes education transformative.
+          </p>
+          
+          <p class="text-gray-600 mb-8">
+            Every project I tackle starts with a simple question: "How can we make this easier to understand and more engaging to learn?" Whether I'm designing a conversational AI mentor or structuring a technical curriculum, I'm always focused on reducing cognitive load while maximizing retention and application.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Timeline -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Professional Timeline</h2>
+        
+        <div class="space-y-8">
+          {timeline.map((item) => (
+            <div class="flex gap-6">
+              <div class="flex-shrink-0 w-20 text-right">
+                <span class="text-sm font-semibold text-primary-600">{item.year}</span>
+              </div>
+              <div class="flex-shrink-0">
+                <div class="w-3 h-3 bg-primary-600 rounded-full mt-1.5"></div>
+                <div class="w-0.5 h-full bg-gray-300 mx-auto mt-1"></div>
+              </div>
+              <div class="flex-grow pb-8">
+                <h3 class="font-semibold text-gray-900">{item.title}</h3>
+                <p class="text-sm text-gray-500 mb-2">{item.company}</p>
+                <p class="text-gray-600">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Let's Connect</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          I'm always interested in discussing new approaches to learning design and AI in education. 
+          Whether you have a project in mind or just want to chat about the future of learning, I'd love to hear from you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/#contact"
+            class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
+          >
+            Get In Touch
+          </a>
+          <a
+            href="/#work"
+            class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            View My Work
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

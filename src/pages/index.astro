@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+// Define projects data
+const featuredProject = {
+  title: 'Marcus Aurelius AI Mentor',
+  description: 'An AI-powered learning companion that brings Stoic philosophy to life through conversational learning, helping users apply ancient wisdom to modern challenges.',
+  image: '/images/marcus-aurelius-hero.jpg',
+  href: '/projects/marcus-aurelius',
+  tags: ['AI/ML', 'Conversational Learning', 'Next.js', 'OpenAI']
+};
+
+const projects = [
+  {
+    title: 'AI Content Generation System',
+    description: 'Automated learning content creation system that reduced course development time by 70% while maintaining instructional quality.',
+    image: '/images/ai-content-gen.jpg',
+    href: '/projects/ai-content-generation',
+    tags: ['Python', 'GPT-4', 'Automation']
+  },
+  {
+    title: 'Paper Grader Assistant',
+    description: 'Privacy-first AI grading system that saved 60-80 hours per semester while providing consistent, detailed feedback.',
+    image: '/images/paper-grader.jpg',
+    href: '/projects/paper-grader',
+    tags: ['Python', 'Claude API', 'Education']
+  },
+  {
+    title: 'Alex Chen Learning Persona',
+    description: 'Interactive learning agent that revolutionized how we teach cloud engineering through personalized scenario-based feedback.',
+    image: '/images/alex-chen.jpg',
+    href: '/projects/alex-chen-persona',
+    tags: ['Persona Design', 'Prompt Engineering', 'Learning Design']
+  },
+  {
+    title: 'Modular Learning Path Ecosystem',
+    description: 'Scalable learning architecture supporting 9 paths, 40+ modules, and 600+ pages of technical content.',
+    image: '/images/learning-paths.jpg',
+    href: '/projects/modular-learning-paths',
+    tags: ['Information Architecture', 'Markdown', 'Git']
+  },
+  {
+    title: 'Zen Electron Case Study',
+    description: 'Multi-brand e-commerce scenario that teaches real-world problem-solving through unified business contexts.',
+    image: '/images/zen-electron.jpg',
+    href: '/projects/zen-electron',
+    tags: ['Scenario-Based Learning', 'Business Context', 'Technical Training']
+  }
+];
+
+const skills = {
+  'Learning Design': ['Instructional Design', 'Curriculum Development', 'Learning Analytics', 'Assessment Design'],
+  'AI & Automation': ['Prompt Engineering', 'GPT-4/Claude', 'AI Integration', 'Process Automation'],
+  'Development': ['Python', 'JavaScript', 'React/Next.js', 'Git/GitHub'],
+  'Tools': ['Articulate Rise', 'Camtasia', 'Adobe Creative Suite', 'Markdown/MDX']
+};
+---
+
+<Layout>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+      <div class="max-w-6xl mx-auto px-6 py-20 md:py-32">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            Creating AI-Powered
+            <span class="text-primary-600 block">Learning Experiences</span>
+          </h1>
+          
+          <p class="text-lg md:text-xl text-gray-600 mb-8">
+            I'm Luke Panaccio, an instructional designer at commercetools who transforms complex technical concepts into engaging, AI-enhanced learning experiences that drive real business impact.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#work"
+              class="px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors text-center"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              class="px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-white transition-colors text-center"
+            >
+              Get In Touch
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary-100 rounded-full opacity-20 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary-200 rounded-full opacity-20 blur-3xl"></div>
+    </section>
+    
+    <!-- Featured Project -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Project</h2>
+          <p class="text-lg text-gray-600">My latest innovation in AI-powered learning</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              {featuredProject.title}
+            </h3>
+            <p class="text-lg text-gray-600 mb-6">
+              {featuredProject.description}
+            </p>
+            
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="ml-3 text-gray-700">Natural conversation interface with Stoic wisdom integration</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="ml-3 text-gray-700">RAG architecture for authentic philosophical responses</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-6 h-6 text-primary-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="ml-3 text-gray-700">95% user satisfaction with learning experience</span>
+              </div>
+            </div>
+            
+            <a
+              href={featuredProject.href}
+              class="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
+            >
+              View Full Case Study
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="relative">
+            <div class="aspect-video rounded-xl overflow-hidden shadow-2xl">
+              <img
+                src={featuredProject.image}
+                alt={featuredProject.title}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-100 rounded-full blur-3xl opacity-50"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Grid -->
+    <section id="work" class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Recent Projects</h2>
+          <p class="text-lg text-gray-600">Exploring the intersection of AI and instructional design</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+          <p class="text-lg text-gray-600">Tools and technologies I use to create impactful learning experiences</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {Object.entries(skills).map(([category, items]) => (
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-3">{category}</h3>
+              <ul class="space-y-2">
+                {items.map((skill) => (
+                  <li class="text-sm text-gray-600 flex items-center">
+                    <span class="w-1 h-1 bg-primary-600 rounded-full mr-2"></span>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Brief About Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Me</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          I'm an instructional designer at commercetools with a unique journey from teaching high school computer science to creating AI-powered learning systems. My graduate certificate in Educational Design (2022) combined with hands-on experience building with GPT-4 and Claude has positioned me at the forefront of the AI learning revolution.
+        </p>
+        <p class="text-lg text-gray-600 mb-8">
+          At commercetools, I've reduced content creation time by 70% through AI automation while maintaining exceptional instructional quality. My work spans from building conversational AI mentors to designing comprehensive learning ecosystems that serve thousands of developers worldwide.
+        </p>
+        <a
+          href="/about"
+          class="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 transition-colors"
+        >
+          Read Full Story
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Let's Work Together</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          I'm preparing for new opportunities in early 2026. If you're looking for an instructional designer who can leverage AI to transform your learning initiatives, I'd love to connect.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="mailto:luke@lukepanaccio.com"
+            class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Email Me
+          </a>
+          <a
+            href="https://linkedin.com/in/lukepanaccio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
